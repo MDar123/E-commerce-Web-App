@@ -1,0 +1,43 @@
+<section>
+  <!-- Main section container with image and content side by side -->
+  <div class="section-container w-100 d-flex mt-5 rounded-4 position-relative overflow-hidden">
+
+    <!-- Image container -->
+    <div class="container-img">
+      <img src="assets/images/sub-banner-img.png" class="w-100 h-100" alt="kids-images">
+    </div>
+
+    <!-- Content container (title, paragraph, buttons) -->
+    <div class="container-content px-lg-3 p-2 pt-3">
+
+      <!-- Animated section title -->
+      <h2 appAnimateOnScroll="slideDown" class="main-section-title fw-bolder ">
+        Kids Zone With Special Security
+      </h2>
+
+      <!-- Animated paragraph text -->
+      <p class="py-2 " appAnimateOnScroll="slideUp">
+        ScreenPal's intuitive tools help you capture, create, and share videos and images
+        for authentic and effective visual communication.
+      </p>
+
+      <!-- Button group with animation on appear -->
+      <div class="d-flex gap-md-3 gap-1 py-2 px-md-5">
+        <!-- Button to see latest movies -->
+        <button appAnimateOnScroll="zoomIn"
+        (click)="goToLatestMovies()"
+        class="see-latest-movies border-white fw-bolder rounded-4 p-md-3 p-2">
+          <i class="fa-solid fa-play"></i> See Top rated movies
+        </button>
+
+        <!-- Button to download the app -->
+        <button appAnimateOnScroll="zoomIn"
+          class="btn-light border-white fw-bolder rounded-4 p-md-3 p-2 text-white">
+          <i class="fa-brands fa-google-play"></i> Download Our App
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+

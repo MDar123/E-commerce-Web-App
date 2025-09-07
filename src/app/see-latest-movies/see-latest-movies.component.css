@@ -1,0 +1,57 @@
+/* Main section style */
+.section-container {
+    background: var(--mix-color); /* Background color from CSS variable */
+    height: 300px; /* Default height of the section */
+}
+
+/* Image container takes half the width */
+.container-img {
+    width: 50%;
+    height: 100%;
+}
+
+/* Content container takes the other half */
+.container-content {
+    width: 50%;
+}
+
+/* Style for the "See latest movies" button */
+.see-latest-movies {
+    background-color: var(--blue-color); /* Custom blue color */
+    color: var(--white-color); /* Custom white text color */
+}
+
+/* Responsive layout for screens smaller than 1550px */
+@media screen and (max-width: 1550px) {
+    .container-img {
+        width: 40%; /* Image takes less width */
+    }
+    .container-content {
+        width: 60%; /* Content takes more width */
+    }
+}
+
+/* Responsive layout for screens smaller than 1210px */
+@media screen and (max-width: 1210px) {
+    .container-img {
+        width: 100%; /* Image takes full width */
+    }
+    .container-img img {
+        transform: scale(1.6, 1.6); /* Zoom in the image */
+    }
+    .container-content {
+        width: 100%; /* Content takes full width */
+        position: absolute; /* Positioned over the image */
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+    }
+}
+
+/* Adjust height for very small screens */
+@media screen and (max-width: 400px) {
+    .section-container {
+        height: 350px; /* Increase height for better spacing */
+    }
+}

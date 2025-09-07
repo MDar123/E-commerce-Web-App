@@ -1,0 +1,56 @@
+<footer class="position-relative">
+  <!-- Main footer section with angled background -->
+  <div class="footer w-100 angled-div mt-5">
+    
+    <!-- Banner area with background and content -->
+    <div class="banner rounded-0 mb-4 w-100 h-100">
+      <!-- Banner background -->
+      <div class="banner-bg position-absolute top-0 start-0 w-100 h-100"></div>
+      
+      <!-- Banner content centered vertically and horizontally -->
+      <div class="banner-content position-relative text-center pt-5 ">
+        
+        <!-- Logo with router link to homepage -->
+        <div routerLink="home-page" (click)="scrollToTop()" class="logo">
+          <i class="fa-solid fa-clapperboard"></i>
+          <span class="px-1">Media</span>
+        </div>
+
+        <!-- Navigation links in the footer -->
+        <ul appAnimateOnScroll="slideUp" class="footer-links pb-md-4 pb-2 nav justify-content-center my-md-3  my-1 flex-wrap gap-md-4 gap-3">
+          <li  routerLink="home-page" (click)="scrollToTop()">Home</li>
+          <li  routerLink="about" (click)="scrollToTop()">About</li>
+          <li  routerLink="media-collection/person/popular" (click)="scrollToTop()">People</li>
+          <li  routerLink="media-collection/trending/all" (click)="scrollToTop()">Trending</li>
+          <li  routerLink="contact" (click)="scrollToTop()">Contact Us</li>
+        </ul>
+
+        <!-- Social media icons with zoom animation on visible -->
+        <div class="social-icons my-md-4 my-2 d-flex justify-content-center gap-md-4 gap-2">
+           <a appAnimateOnScroll="zoomIn" class="text-white"><i class="fab fa-facebook-f"></i></a>
+           <a appAnimateOnScroll="zoomIn" class="text-white"><i class="fab fa-twitter"></i></a>
+           <a appAnimateOnScroll="zoomIn" class="text-white"><i class="fab fa-instagram"></i></a>
+           <a appAnimateOnScroll="zoomIn" class="text-white"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer bottom section with copyright and links -->
+  <div class="footer-copyright py-1 w-100 angled-div overflow-hidden">
+    <div class="footer-copyright-content px-md-5 px-1 pt-2 text-center text-md-start">
+      
+      <!-- Copyright text -->
+      <div class="">
+        <p>Copyright &copy;2025 by tube</p>
+      </div>
+      
+      <!-- Footer policy links -->
+      <div class="d-flex justify-content-center gap-md-3 gap-4">
+        <a class=" text-decoration-none">Terms of Use</a>
+        <a class=" text-decoration-none">Privacy Policy</a>
+        <a class=" text-decoration-none">License</a>
+      </div>
+    </div>
+  </div>
+</footer>

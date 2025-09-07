@@ -1,0 +1,268 @@
+/* =================== Global Variables =================== */
+:root {
+  --main-color: #CB50FC;
+  --blue-color: #2B49FE;
+  --black-color: black;
+  --white-volor: white;
+  --bg-section: #1B1B1B;
+  --mix-color: linear-gradient(to right, var(--blue-color), var(--main-color));
+  --border-color: rgb(55, 55, 55);
+  --input-color: #2c2c2c;
+  --pragrah-color:rgb(161, 161, 161);
+}
+/* =================== Base Styles =================== */
+
+/* Global body style */
+body {
+  background: var(--black-color);
+  color: var(--white-volor);
+}
+
+/* Icons cursor pointer */
+i {
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+p,a,span,li,button{
+  font-size: 1.6rem;
+}
+img{
+  object-fit:cover;
+  object-position: top; 
+}
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+input:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+input{
+  border:0;
+}
+label{
+  background-color:white
+}
+.date-content{
+  color: var(--pragrah-color);
+}
+.media-name{
+  color:var(--white-volor);
+  cursor: pointer;
+  transition: color 0.5s ease-in;
+}
+.media-name:hover{
+  color: var(--main-color);
+}
+.see-more-link{
+  text-decoration: underline;
+  color: var(--blue-color);
+  cursor: pointer;
+}
+.media-title:hover{
+  color: var(--main-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* Button style with gradient hover effect */
+button {
+  background: var(--black-color);
+  font-weight: 400;
+  border-radius: 7px;
+  border: 0.1px solid var(--border-color);
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Button gradient layer (initially hidden) */
+button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--mix-color);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Show gradient on hover */
+button:hover::before {
+  opacity: 1;
+}
+
+/* Button that always shows mix gradient */
+.button-mix-color::before {
+  opacity: 1;
+}
+/* Style for the vote button */
+.vote{
+  background-color: var(--blue-color);
+}
+/* .vote::before{
+  opacity: 1;
+} */
+/* Main header title style */
+.main-section-title{
+  font-weight: 700;       /* Bold font */
+  font-size: 2.7rem;      /* Large font size for emphasis */
+}
+/* Logo style */
+.logo {
+  font-weight: 700;
+  cursor: pointer;
+}
+.logo i,.logo span{
+  font-size: 1.7rem;
+}
+/* Logo icon with gradient text effect */
+.logo i {
+  background: var(--mix-color);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* =================== Banner Section =================== */
+/* Banner container */
+.banner {
+  border-radius: 12px;
+  padding: 2% ;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+/* Banner background layer */
+.banner-bg {
+  background: linear-gradient(134deg, var(--blue-color) 50%, var(--main-color) 90%);
+  opacity: 0.7;
+  z-index: 0;
+}
+
+/* Banner content (above background) */
+.banner-content {
+  position: relative;
+  z-index: 1;
+}
+/* Container styles for displaying movie, person, or TV show cards */
+.media-container {
+  position: relative;
+  cursor: pointer;
+  transition:all 0.5s ease;
+}
+.overley{
+  background-color: rgba(0,0,0,0.8);
+    opacity: 0;
+    transition:all 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.media-container:hover .overley{
+    opacity: 1;
+}
+
+/* Styling the image inside each media card */
+.media-container img {
+  width: 100%; /* Full width to fill the container */
+  border-radius: 10px; /* Rounded corners for the image */ /* Fixed height for consistent layout */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+/* Style for displaying the popularity score of movies, people, or TV shows */
+.popularity {
+  color: var(--blue-color); /* Use main theme color to highlight popularity */
+}
+/*  slider container */
+.slider-container{
+  background-color: var(--bg-section);
+  padding: 1%;
+  cursor: pointer;
+  position: relative;
+}
+.slider-container::after{
+  content: "";
+  background: var(--mix-color);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  height: 0;
+  transition:all 0.5s ease;
+  border-radius: 6px;
+}
+.slider-container:hover::after{
+  opacity: 0.7;
+  height: 100%;
+}
+@media screen and (max-width:2000px){
+  i {
+  cursor: pointer;
+  font-size: 1rem;
+}
+p,a,span,li,button{
+  font-size: 1rem;
+}
+}
+@media screen and (max-width:1500px){
+  .main-section-title{
+    font-size: 2.5rem;
+  }
+    .overley{
+  background-color:var(--bg-section);
+  transition: 0s;
+  border-radius: 6px;
+    opacity: 1;
+    position:static;
+    width: 100%;
+    height: 50%;
+    display: block;
+}
+.media-container:hover{
+  box-shadow: 0 10px 10px rgba(255, 255, 255, 0.6);
+}
+}
+@media screen and (max-width:1100px){
+  .main-section-title{
+    font-size: 2.2rem;
+  }
+}
+@media screen and (max-width:1000px){
+  .logo i,.logo span{
+  font-size: 1.4rem;
+}
+  .main-section-title{
+    font-size: 2.4rem;
+  }
+}
+@media screen and (max-width:850px){
+  .media-container{
+    padding: 2%;
+  }
+  .main-section-title{
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width:550px){
+  h2,h3{
+    font-size: 1.2rem;
+    padding-top: 2%;
+  }
+  .banner{
+    padding: 1%;
+    text-align: center;
+  }
+  .main-section-title{
+    font-size: 1.8rem;
+  }
+  .media-container img{
+    height: 350px;
+  }
+}

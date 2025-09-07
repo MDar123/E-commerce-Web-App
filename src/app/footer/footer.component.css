@@ -1,0 +1,100 @@
+/* Footer section with background image */
+.footer {
+  background-image: url(../../assets/images/footer-bg-img.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+ 
+}
+
+/* Semi-transparent overlay for banner background */
+.banner-bg {
+  opacity: 0.4;
+}
+
+/* Angled shape effect using clip-path */
+.angled-div {
+  -webkit-clip-path: polygon(0 0, 35% 0, 50% 60px, 65% 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 35% 0, 50% 60px, 65% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Logo text size */
+/* Gradient or solid color fill inside the icon text */
+.logo i {
+  background: var(--white-volor);       /* Check spelling: should be --white-color */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Footer links container with bottom border */
+.footer-links {
+  border-bottom: 0.1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Individual footer links styling */
+.footer-links li {
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Hover effect for footer links */
+.footer-links li:hover {
+  color: var(--black-color);
+}
+
+/* Social media icons style */
+.social-icons a {
+  font-size: 1.2rem;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+/* Copyright footer bar at the bottom */
+.footer-copyright {
+
+  background-color: var(--black-color);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.footer-copyright-content{
+  display: flex;
+  justify-content: space-between;
+}
+.footer-copyright a{
+  transition:color 0.5s ease;
+  color: var(--white-volor);
+  cursor: pointer;
+}
+.footer-copyright a:hover{
+  color: var(--main-color);
+}
+@media screen and (max-width:1160px){
+  .footer{
+    height: 320px;
+  }
+  .social-icons a {
+    font-size: 1rem;
+  }
+  
+  .footer-copyright.angled-div{
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+  }
+}
+@media screen and (max-width:600px){
+  .footer-copyright-content{
+  display: block;
+}
+ .footer{
+    height: 350px;
+  }
+}

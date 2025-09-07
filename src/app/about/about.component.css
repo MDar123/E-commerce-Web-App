@@ -1,0 +1,28 @@
+/* Custom width for about container */
+.about-container {
+  width: 80%;
+}
+/* Background color for each stat box */
+.about-content {
+  background-color: var(--bg-section);
+}
+/* Icon and label font size */
+i, .about-content p {
+  font-size: 1.5rem;
+}
+/* Responsive adjustments for screens below 1450px */
+@media screen and (max-width:1450px) {
+  .about-container {
+    width: 90%;
+  }
+}
+/* Further responsive styles for smaller screens */
+@media screen and (max-width:1450px) {
+  .about-container {
+    width: 100%;
+    padding: 0% 3%;
+  }
+  i, .about-content p {
+    font-size: 1.3rem;
+  }
+}

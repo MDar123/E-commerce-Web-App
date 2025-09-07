@@ -1,0 +1,107 @@
+<!-- Sidebar container with full viewport height and padding -->
+<div  class="sidebar vh-100 px-sm-3 py-4 px-1">
+
+    <!-- Logo section with clapperboard icon and brand name -->
+    <div routerLink="home-page" (click)="onLinkClick()" class="logo">
+         <i class="fa-solid fa-clapperboard"></i>
+        <span class="px-1">Media</span>
+    </div>
+
+    <!-- Sidebar links list -->
+    <ul class="sidebar-links list-unstyled my-4 ">
+        
+        <!-- Home Link -->
+        <li routerLink="home-page" routerLinkActive="active" 
+        (click)="onLinkClick()" class="sidebar-link px-3 py-2">
+            <i class="fa-solid fa-house"></i>
+            <span class="px-2">Home</span>
+        </li>
+
+        <!-- About Link -->
+        <li routerLink="about" routerLinkActive="active"
+        (click)="onLinkClick()" class="sidebar-link px-3 py-2">
+            <i class="fa-solid fa-user"></i>
+            <span class="px-2">About</span>
+        </li>
+        <!-- dashboard Link -->
+        <li routerLink="dashboard" routerLinkActive="active"
+        (click)="onLinkClick()" class="sidebar-link dashboard-button px-3 py-2">
+            <i class="fa-solid fa-grip fa-1x"></i>
+            <span class="px-2">Dashboard</span>
+        </li>
+
+        <!-- ========== Movies Dropdown ========== -->
+        <!-- Toggler for movies dropdown, shows selected option or 'Movies' -->
+        <li [routerLink]="['media-collection/movie']"
+         [routerLinkActiveOptions]="{ exact: false }" 
+           routerLinkActive="active" class="sidebar-link px-3 py-2 d-flex justify-content-between" 
+           (click)="toggleMovieDropdown()">
+            <div>
+                <i class="fa-solid fa-play"></i>
+                <span class="select-movies px-2">{{ selectedMovieOption || 'Movies' }}</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </li>
+
+        <!-- Movies dropdown menu if open -->
+        @if (isMovieDropdownOpen){
+            <ul class="list-unstyled p-2 navbar-select">
+                @for(option of movieOptions; track option.value){
+                    <li [routerLink]="option.pathToComponent"
+                    (click)="onLinkClick()" (click)="selectMovieOption(option)" class="py-1 px-2">
+                        {{ option.label }}
+                    </li>
+                }
+            </ul>
+        }
+
+        <!-- ========== TV Shows Dropdown ========== -->
+        <!-- Toggler for TV shows dropdown, shows selected option or 'TV Shows' -->
+        <li  [routerLink]="['media-collection/tv']"
+         [routerLinkActiveOptions]="{ exact: false }"  routerLinkActive="active" 
+         class="sidebar-link px-3 py-2 d-flex justify-content-between" (click)="toggleTVDropdown()">
+            <div>
+                <i class="fa-solid fa-clapperboard"></i>
+                <span class="select-movies px-2">{{ selectedTVOption || 'TV Shows' }}</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </li>
+
+        <!-- TV Shows dropdown menu if open -->
+        @if (isTVDropdownOpen){
+            <ul class="list-unstyled p-2 navbar-select">
+                @for(option of tvOptions; track option.value){
+                    <li  [routerLink]="option.pathToComponent"
+                    (click)="onLinkClick()" (click)="selectTVOption(option)" class="py-1 px-2">
+                        {{ option.label }}
+                    </li>
+                }
+            </ul>
+        }
+        <!-- People Link -->
+        <li routerLink="media-collection/person/popular" routerLinkActive="active"
+        (click)="onLinkClick()" class="sidebar-link px-3 py-2">
+            <i class="fa-solid fa-circle-play"></i>
+            <span class="px-2">People</span>
+        </li>
+
+        <!-- Trending Link -->
+        <li routerLink="media-collection/trending/all" routerLinkActive="active" 
+        (click)="onLinkClick()" class="sidebar-link px-3 py-2">
+            <i class="fa-solid fa-chart-simple"></i>
+            <span class="px-2">Trending</span>
+        </li>
+
+        <!-- Contact Link -->
+        <li routerLinkActive="active" routerLink="contact" (click)="onLinkClick()"
+         class="sidebar-link px-3 py-2">
+            <i class="fa-solid fa-user"></i>
+            <span class="px-2">Contact</span>
+        </li>
+
+    </ul>
+</div>
